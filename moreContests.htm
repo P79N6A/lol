@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="gbk">
+    <meta name="robots" content="all" />
+    <meta name="Copyright" content="Tencent" />
+    <meta name="author" content="Tencent-CP" />
+    <meta name="keywords" content="英雄联盟,lol,lol新手礼包,lol攻略,lol视频,lol视频攻略,英雄资料,英雄联盟战争学院,明星解说视频,101战争学院,英雄,攻略,WCG,点亮图标,赛事"/>
+    <meta name="description" content="英雄联盟官方网站，海量风格各异的英雄，丰富、便捷的物品合成系统，游戏内置的匹配、排行和竞技系统，独创的“召唤师”系统及技能、符文、天赋等系统组合，必将带你进入一个崭新而又丰富多彩的游戏世界。"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>更多英雄联盟精彩赛程</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/comm.css">
+    <!-- 设计：cp | 重构：cp | 创建：2017-04-06| 团队博客：http://tgideas.qq.com/ -->
+    <script>
+        !function(){function a(){document.documentElement.style.fontSize=document.documentElement.clientWidth/750*10/16*1000+"%"}var b=null;window.addEventListener("resize",function(){clearTimeout(b);b=setTimeout(a,300)},!1);a()}(window);
+    </script>
+</head>
+<body>
+<!--顶部-->
+<!-- <div class="com-top bg-top">
+    <a href="javascript:window.history.back();" class="spr-btn_return" ontouchend="pgvSendClick({hottag:'m.moreContests.btn.return'});"></a>
+    更多精彩赛程
+    <a href="javascript:;" class="spr-btn_share" ontouchend="pgvSendClick({hottag:'m.moreContests.btn.share'});"></a>
+</div> -->
+
+<!--更多精彩赛程-->
+<div class="com-wrap page-moreContests" id="page_moreContests" style="height:auto;">
+    <!--赛程-->
+    <!--
+    btn_seeAll       ---观看集锦
+    btn_seeLive      ---直播中
+    btn_subscribe    ---订阅比赛
+    btn_subscribed   ---已订阅
+    -->
+    <div class="m-contests-box" id="matchList">
+    </div>
+</div>
+<div style="height:1rem;"></div>
+
+<script src="//pub.idqqimg.com/qqmobile/qqapi.js?_bid=152"></script>
+<script src="//ossweb-img.qq.com/images/js/zepto/zepto.min.js"></script>
+<script src="//ossweb-img.qq.com/images/js/mobile_build/milo.js"></script>
+<script src="//ossweb-img.qq.com/images/js/login/loginmanagerv3.js" charset="gb2312"></script>
+<script src="http://lpl.qq.com/web201612/data/LOL_MATCH2_TEAM_LIST.js"></script>
+<script src="http://lpl.qq.com/web201612/data/LOL_NEWMATCH_FIRPAGE_GROUP_TEAM_SCORE.js"></script>
+<script src="http://lpl.qq.com/web201612/data/LOL_NEWMATCH_MOBILE_SHARE_CONFIG_INFO.js"></script>
+<script src="http://lpl.qq.com/web201612/data/LOL_MOBILE_ALL_BMATCH_INFO.js"></script>
+<!--<script src="//imgcache.gtimg.cn/tencentvideo_v1/tvp/js/tvp.player_v2.js" charset="utf-8"></script>-->
+<script src="//ossweb-img.qq.com/images/js/TGMobileShare/TGMobileShare.min.js"></script>
+<script src="//lol.qq.com/m/public/LOL_App.js"></script>
+<script src="js/login.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/share.js" charset="gbk"></script>
+<script src="js/comm.js"></script>
+<script src="js/public.js"></script>
+<script src="js/moreContests.js"></script>
+
+<script type="text/javascript">
+    /*直播初始化*/
+    function liveVideo(channelId,boxId){
+        var video = new tvp.VideoInfo();
+        var width_video= $('#'+boxId).width();
+        var height_video= $('#'+boxId).height();
+        video.setChannelId(channelId);
+        var player = new tvp.Player();
+        player.create({
+            width: width_video,
+            height: height_video,
+            type: 1,
+            video: video,
+            modId: boxId,
+            autoplay: false
+        });
+    }
+    //二级页面导航置灰
+    $('#comm_nav li').removeClass('on');
+    
+    var shareFun = function(){
+    	initShare('87');
+
+    }
+    milo.ready(function() {
+	    CONTEST.Init();
+	    shareFun();
+    })
+
+</script>
+
+
+<script src="//pingjs.qq.com/ping_tcss_ied.js"></script>
+<script>if(typeof(pgvMain) == 'function')pgvMain({virtualDomain: "lol.qq.com"});</script>
+</body>
+</html><!--[if !IE]>|xGv00|1e80a8038493081e8ed520ac6b1b66f6<![endif]-->

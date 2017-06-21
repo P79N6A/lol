@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="gbk">
+    <meta name="robots" content="all" />
+    <meta name="Copyright" content="Tencent" />
+    <meta name="author" content="Tencent-CP" />
+    <meta name="keywords" content="英雄联盟,lol,lol新手礼包,lol攻略,lol视频,lol视频攻略,英雄资料,英雄联盟战争学院,明星解说视频,101战争学院,英雄,攻略,WCG,点亮图标,赛事"/>
+    <meta name="description" content="英雄联盟官方网站，海量风格各异的英雄，丰富、便捷的物品合成系统，游戏内置的匹配、排行和竞技系统，独创的“召唤师”系统及技能、符文、天赋等系统组合，必将带你进入一个崭新而又丰富多彩的游戏世界。"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>英雄联盟赛事数据</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/comm.css">
+    <!-- 设计：cp | 重构：cp | 创建：2017-04-06| 团队博客：http://tgideas.qq.com/ -->
+    <script>
+        !function(){function a(){document.documentElement.style.fontSize=document.documentElement.clientWidth/750*10/16*1000+"%"}var b=null;window.addEventListener("resize",function(){clearTimeout(b);b=setTimeout(a,300)},!1);a()}(window);
+    </script>
+    <style>
+        @font-face {
+            font-family: Dinot;
+            src: url(//ossweb-img.qq.com/images/lpl/m/web201704/DINOT-Bold.ttf)
+        }
+        .data-wrap .tab-hd {width: 100%;height: .80rem;}
+        .data-wrap .tab-hd a {display: block;float: left;width: 50%;height: .80rem;line-height: .80rem;font-size: .28rem;color: #5f6064;text-align: center;}
+        .data-wrap .tab-hd a.on {background: #684e16;color: #ffc65b;}
+        .data-wrap .m-leagues {border: 1px solid #000;height: .68rem;background: #080a0d;}
+        .data-wrap .m-leagues li {background: #080a0d;width: 50%;height: .68rem;line-height: .68rem;float: left;text-align: center;font-size: .24rem;color:#5f6064;}
+        .data-wrap .m-leagues li:last-of-type {border-right: none;}
+        .data-wrap .m-leagues li.on {background: #11151c;color: #fff;}
+        .data-wrap .m-group .group-tit,
+        .data-wrap .m-type .type-tit {width: 100%;height: .68rem;line-height: .68rem;text-indent: .20rem;background: #0c0f14;font-size: .28rem;color: #fff;}
+        .data-wrap .m-group table {width: 100%;}
+        .data-wrap .m-group table .team-logo {display: inline-block;vertical-align: middle;width: .40rem;height: .40rem;border-radius: 50%;overflow: hidden;margin-right: .20rem;background: #080a0d;}
+        .data-wrap .m-group table .cut-off {color: #848484;}
+        .data-wrap .m-group table .lose {color: #848484;}
+        .data-wrap .m-group table th {text-align: left;height: .80rem;border-bottom: 1px solid #080a0d; color:#5f6064}
+        .data-wrap .m-group table th:nth-of-type(2) {text-indent: .60rem;width: 2.80rem;}
+        .data-wrap .m-group table td {height: 1.00rem;border-bottom: 1px solid #080a0d}
+        .data-wrap .m-group table td:first-of-type {padding: 0 .20rem;text-align: center;width: 12%}
+        .data-wrap .m-group table tbody tr:nth-of-type(1),
+        .data-wrap .m-group table tbody tr:nth-of-type(2),
+        .data-wrap .m-group table tbody tr:nth-of-type(3) {color: #cea04a;}
+
+        .data-wrap .m-type dt {height: .80rem;line-height: .80rem;font-size: .28rem;color: #7a7a7a;}
+        .data-wrap .m-type dt span:first-of-type{margin: 0 2.75rem 0 1.25rem;}
+        .data-wrap .m-type dt span:last-of-type{margin: 0 0 0 1.10rem;}
+        .data-wrap .m-type dd {border-bottom: .02rem solid #080a0d;height: 1.72rem;line-height: 1.72rem;}
+        .data-wrap .m-type dd:nth-of-type(1) {
+            background: -webkit-linear-gradient(left, #7f6432, #3c3321, #131517, #18191b);
+            background: -o-linear-gradient(left, #7f6432, #3c3321, #131517, #18191b);
+            background: -moz-linear-gradient(left, #7f6432, #3c3321, #131517, #18191b);
+            background: linear-gradient(left, #7f6432, #3c3321, #131517, #18191b);
+        }
+        .data-wrap .m-type dd:nth-of-type(2) {
+            background: -webkit-linear-gradient(left, #5e6060, #27282a, #131517, #18191b);
+            background: -o-linear-gradient(left, #5e6060, #27282a, #131517, #18191b);
+            background: -moz-linear-gradient(left, #5e6060, #27282a, #131517, #18191b);
+            background: linear-gradient(left, #5e6060, #27282a, #131517, #18191b);
+        }
+        .data-wrap .m-type dd:nth-of-type(3) {
+            background: -webkit-linear-gradient(left, #664a30, #2d261f, #131517, #18191b);
+            background: -o-linear-gradient(left, #664a30, #2d261f, #131517, #18191b);
+            background: -moz-linear-gradient(left, #664a30, #2d261f, #131517, #18191b);
+            background: linear-gradient(left, #664a30, #2d261f, #131517, #18191b);
+        }
+        .data-wrap .m-type dd span {color: #fff;font-size: .24rem;float: left;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;font-family: Dinot;}
+        .data-wrap .m-type dd span:nth-of-type(1) {color: rgba(27,28,30,.4);font-size: 1.00rem;margin: 0 .20rem;}
+        .data-wrap .m-type dd span:nth-of-type(2) {display: block;float: left;width: 1.74rem;}
+        .data-wrap .m-type dd span:nth-of-type(3) {display: block;float: left;width: 1.60rem;text-indent: .10rem;}
+        .data-wrap .m-type dd span:nth-of-type(4) {display: block;float: left;width: 1.00rem;text-indent: .20rem;}
+        .data-wrap .m-type dd img {display: block;width: 1.84rem;height: 1.72rem;float: left}
+    </style>
+</head>
+<body>
+<!--赛事数据-->
+<div class="com-wrap data-wrap" style="padding-top: 0;">
+    <div class="top-tab" id="topTab">
+        <div class="tab-hd">
+            <a href="javascript:" ontouchend="pgvSendClick({hottag:'m.data.btn.teamrank'});">战队积分榜</a>
+            <a href="javascript:" ontouchend="pgvSendClick({hottag:'m.data.btn.playersrank'});">选手排行榜</a>
+        </div>
+        <div class="tab-bd">
+            <!--战队积分榜-->
+            <div class="tab-panel">
+                <ul class="m-leagues">
+                    <li class="on">LPL</li>
+                    <li>LCK</li>
+                </ul>
+                <!--战队积分榜数据-->
+                <div class="m-teams">
+                </div>
+            </div>
+            <!--选手排行榜-->
+            <div class="tab-panel">
+                <!--选手排行榜数据-->
+                <div class="m-players">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<div style="height:1rem;"></div>
+
+<script src="//pub.idqqimg.com/qqmobile/qqapi.js?_bid=152"></script>
+<script src="//ossweb-img.qq.com/images/js/zepto/zepto.min.js"></script>
+<script src="//ossweb-img.qq.com/images/js/mobile_build/milo.js"></script>
+<script src="//ossweb-img.qq.com/images/js/login/loginmanagerv3.js" charset="gb2312"></script>
+<script src="http://lpl.qq.com/web201612/data/LOL_NEWMATCH_FIRPAGE_GROUP_TEAM_SCORE.js"></script>
+<script src="http://lpl.qq.com/web201612/data/LOL_MATCH2_TEAM_LIST.js"></script>
+<script src="http://lpl.qq.com/web201612/data/LOL_MATCH2_TEAM_MEMBER_LIST.js"></script>
+<script src="http://lpl.qq.com/web201612/data/LOL_NEWMATCH_MOBILE_SHARE_CONFIG_INFO.js"></script>
+<!--<script src="//imgcache.gtimg.cn/tencentvideo_v1/tvp/js/tvp.player_v2.js" charset="utf-8"></script>-->
+<script src="//ossweb-img.qq.com/images/js/TGMobileShare/TGMobileShare.min.js"></script>
+<script src="//lol.qq.com/m/public/LOL_App.js"></script>
+<script src="js/login.js"></script>
+<script src="js/share.js" charset="gbk"></script>
+<script src="js/nav.js"></script>
+<script src="js/comm.js"></script>
+<script src="js/data.js"></script>
+<script>
+    //战队积分榜数据
+    var leagueData = new Array();
+   /*  var leagueData = [
+        //LPL
+        [
+            {
+                group: 'A组',
+                list: [
+                    {rank: 1, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'KT', win: '6', lose: '0', points: 6},
+                    {rank: 2, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'SKTT1', win: '6', lose: '0', points: 6},
+                    {rank: 3, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'SSG', win: '6', lose: '0', points: 6},
+                    {rank: 4, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'LZ', win: '6', lose: '0', points: 6},
+                    {rank: 5, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'MVP', win: '6', lose: '0', points: 6},
+                    {rank: 6, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'AFS', win: '6', lose: '0', points: 6}
+                ]
+            }
+        ],
+        //LCK
+        [
+            {
+                group: 'A组',
+                list: [
+                    {rank: 1, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'KT', win: '6', lose: '0', points: 6},
+                    {rank: 2, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'SKTT1', win: '6', lose: '0', points: 6},
+                    {rank: 3, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'SSG', win: '6', lose: '0', points: 6},
+                    {rank: 4, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'LZ', win: '6', lose: '0', points: 6},
+                    {rank: 5, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'MVP', win: '6', lose: '0', points: 6},
+                    {rank: 6, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'AFS', win: '6', lose: '0', points: 6}
+                ]
+            },
+            {
+                group: 'B组',
+                list: [
+                    {rank: 1, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'KT', win: '6', lose: '0', points: 6},
+                    {rank: 2, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'SKTT1', win: '6', lose: '0', points: 6},
+                    {rank: 3, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'SSG', win: '6', lose: '0', points: 6},
+                    {rank: 4, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'LZ', win: '6', lose: '0', points: 6},
+                    {rank: 5, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'MVP', win: '6', lose: '0', points: 6},
+                    {rank: 6, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'AFS', win: '6', lose: '0', points: 6}
+                ]
+            }
+        ],
+        //LMS
+        [
+            {
+                group: 'A组',
+                list: [
+                    {rank: 1, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'KT', win: '6', lose: '0', points: 6},
+                    {rank: 2, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'SKTT1', win: '6', lose: '0', points: 6},
+                    {rank: 3, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'SSG', win: '6', lose: '0', points: 6},
+                    {rank: 4, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'LZ', win: '6', lose: '0', points: 6},
+                    {rank: 5, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'MVP', win: '6', lose: '0', points: 6},
+                    {rank: 6, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'AFS', win: '6', lose: '0', points: 6}
+                ]
+            }
+        ],
+        //EU.LCS
+        [
+            {
+                group: 'A组',
+                list: [
+                    {rank: 1, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'KT', win: '6', lose: '0', points: 6},
+                    {rank: 2, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'SKTT1', win: '6', lose: '0', points: 6},
+                    {rank: 3, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'SSG', win: '6', lose: '0', points: 6},
+                    {rank: 4, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'LZ', win: '6', lose: '0', points: 6},
+                    {rank: 5, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'MVP', win: '6', lose: '0', points: 6},
+                    {rank: 6, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'AFS', win: '6', lose: '0', points: 6}
+                ]
+            }
+        ],
+        //NA.LCS
+        [
+            {
+                group: 'A组',
+                list: [
+                    {rank: 1, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'KT', win: '6', lose: '0', points: 6},
+                    {rank: 2, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'SKTT1', win: '6', lose: '0', points: 6},
+                    {rank: 3, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'SSG', win: '6', lose: '0', points: 6},
+                    {rank: 4, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'LZ', win: '6', lose: '0', points: 6},
+                    {rank: 5, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'MVP', win: '6', lose: '0', points: 6},
+                    {rank: 6, img: '//ossweb-img.qq.com/images/lpl/m/web201704/teamicon_2.png', team: 'AFS', win: '6', lose: '0', points: 6}
+                ]
+            }
+        ]
+    ]; */
+    //选手积分榜数据
+     var playerData = new Array();
+   /*  var playerData = [
+        //击杀榜
+        {
+            rankName: '击杀榜',
+            list: [
+                {rank: 1, img: '//ossweb-img.qq.com/images/lpl/m/web201704/p_UZI.png', name: 'UZI', team: 'RNG', times: 39},
+                {rank: 2, img: '//ossweb-img.qq.com/images/lpl/m/web201704/p_UZI.png', name: 'Republic', team: 'RNG', times: 35},
+                {rank: 3, img: '//ossweb-img.qq.com/images/lpl/m/web201704/p_UZI.png', name: 'UZI', team: 'RNG', times: 34}
+            ]
+        },
+        //助攻榜
+        {
+            rankName: '助攻榜',
+            list: [
+                {rank: 1, img: '//ossweb-img.qq.com/images/lpl/m/web201704/p_UZI.png', name: 'UZI', team: 'RNG', times: 39},
+                {rank: 2, img: '//ossweb-img.qq.com/images/lpl/m/web201704/p_UZI.png', name: 'Republic', team: 'RNG', times: 35},
+                {rank: 3, img: '//ossweb-img.qq.com/images/lpl/m/web201704/p_UZI.png', name: 'UZI', team: 'RNG', times: 34}
+            ]
+        },
+        //战力榜（截至常规赛第八周）
+        {
+            rankName: '战力榜（截至常规赛第八周）',
+            list: [
+                {rank: 1, img: '//ossweb-img.qq.com/images/lpl/m/web201704/p_UZI.png', name: 'Doinb', team: 'QG', times: 70.08},
+                {rank: 2, img: '//ossweb-img.qq.com/images/lpl/m/web201704/p_UZI.png', name: 'Uzi', team: 'RNG', times: 68.00},
+                {rank: 3, img: '//ossweb-img.qq.com/images/lpl/m/web201704/p_UZI.png', name: 'Mystic', team: 'WE', times: 67.81}
+            ]
+        }
+    ]; */
+
+    var dataPageJs = {
+        init: function () {
+            dataPageJs.tab({ elmId: 'topTab'});
+            //加载选手排行榜数据
+            dataPageJs.loadPlayerData();
+            //加载战队积分榜第一个联赛数据
+            dataPageJs.loadLeagueData(0);
+            //战队积分榜-赛区选中状态
+            $('.data-wrap .m-leagues li').click(function () {
+                $(this).addClass('on').siblings().removeClass('on');
+                if($(this).index() == 1){
+                	initShare('95');
+                }else{
+                	initShare('91');
+                }
+                	
+                dataPageJs.loadLeagueData($(this).index());
+            });
+        },
+        //加载赛区数据
+        loadLeagueData: function (index) {
+            var sHtml = '';
+            var league = leagueData[index];
+            
+            if(league.length >=2 && typeof(league[0]) != 'undefined' && typeof(league[1]) != 'undefined' && league[0]['group'] == 'B'){
+            	var temp = league[0];
+            	league[0] = league[1];
+            	league[1] = temp;
+            }
+            //分组列表
+            for (var i = 0; i < league.length; i++) {
+                var group = league[i];
+                sHtml +='<div class="m-group">';
+                sHtml += (league.length>=2?'<div class="group-tit">'+group.group+'组</div>':'');
+                sHtml +='<table cellspacing="0" cellpadding="0">\
+                                <thead>\
+                                <tr>\
+                                    <th>&nbsp;</th>\
+                                    <th>战队</th>\
+                                    <th>胜负</th>\
+                                    <th>积分</th>\
+                                </tr>\
+                                </thead>\
+                           <tbody>';
+                //小组内队伍数据
+                for (var j = 0; j < group.list.length; j++) {
+                    var obj = group.list[j];
+                    sHtml += '<tr>\
+                                <td>'+obj.rank+'</td>\
+                                <td><img src="'+obj.img+'" class="team-logo">'+obj.team+'</td>\
+                                <td><span class="win">'+obj.win+'</span><span class="cut-off"> / </span><span class="lose">'+obj.lose+'</span></td>\
+                                <td>'+obj.points+'</td>\
+                              </tr>';
+                }
+                sHtml += '</tbody></table></div>';
+            }
+            $('.m-teams').html(sHtml);
+        },
+        //加载选手排行数据
+        loadPlayerData: function () {
+            var sHtml = '';
+            for (var i = 0; i < playerData.length; i++) {
+                var group = playerData[i];
+                var numTitle = group['title'];
+
+                sHtml += '<div class="m-type">\
+                        <div class="type-tit">'+group.rankName+'</div>\
+                        <dl>\
+                        <dt><span>队员</span><span>战队</span><span>'+numTitle+'</span></dt>';
+                for (var j = 0; j < group.list.length; j++) {
+                    var obj = group.list[j];
+                    sHtml += '<dd>\
+                            <span>'+obj.rank+'</span>\
+                            <img src="'+obj.img+'">\
+                            <span>'+obj.name+'</span>\
+                            <span>'+obj.team+'</span>\
+                            <span>'+obj.times+'</span>\
+                            </dd>';
+                }
+                sHtml += '</dl></div>';
+            }
+            $('.m-players').html(sHtml);
+        },
+        /**
+         * Tab切换（jQuery/Zepto）
+         * @param opts.elmId 元素id
+         * @param opts.hd Tab头部（可为空）
+         * @param opts.panel Tab内容部分（可为空）
+         */
+        tab: function(opts) {
+            var that = $('#'+opts.elmId);
+            var hd_tabs_top = $(that).find(opts.hd ? opts.hd+' a' : '.tab-hd a');
+            var hd_tab_panel = $(that).find(opts.panel || '.tab-panel');
+            hd_tabs_top.eq(0).addClass('on');
+            hd_tab_panel.hide().eq(0).show();
+            var tab_click = function(e,i){
+            	if(i== '1'){
+            		initShare('92');
+            	}else{
+            		initShare('91');
+            	}
+                hd_tabs_top.removeClass('on').eq(i).addClass('on');
+                hd_tab_panel.hide().eq(i).show();
+                return false;
+            };
+            hd_tabs_top.each(function(i){
+                $(this).on('click', function(e){
+                    tab_click(e,i);
+                });
+            });
+        }
+    };
+
+    $(function () {
+    	DATA.init();
+    	initShare('91');
+    })
+</script>
+<script src="//pingjs.qq.com/ping_tcss_ied.js"></script>
+<script>if(typeof(pgvMain) == 'function')pgvMain({virtualDomain: "lol.qq.com"});</script>
+</body>
+</html><!--[if !IE]>|xGv00|9c74a4f598991f827e15fe9fbe3cd700<![endif]-->

@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="gbk">
+    <meta name="robots" content="all" />
+    <meta name="Copyright" content="Tencent" />
+    <meta name="author" content="Tencent-CP" />
+    <meta name="keywords" content="英雄联盟,lol,lol新手礼包,lol攻略,lol视频,lol视频攻略,英雄资料,英雄联盟战争学院,明星解说视频,101战争学院,英雄,攻略,WCG,点亮图标,赛事"/>
+    <meta name="description" content="英雄联盟官方网站，海量风格各异的英雄，丰富、便捷的物品合成系统，游戏内置的匹配、排行和竞技系统，独创的“召唤师”系统及技能、符文、天赋等系统组合，必将带你进入一个崭新而又丰富多彩的游戏世界。"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>英雄联盟-官方售票</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/comm.css">
+    <!-- 设计：cp | 重构：cp | 创建：2017-04-06| 团队博客：http://tgideas.qq.com/ -->
+    <script>
+        !function(){function a(){document.documentElement.style.fontSize=document.documentElement.clientWidth/750*10/16*1000+"%"}var b=null;window.addEventListener("resize",function(){clearTimeout(b);b=setTimeout(a,300)},!1);a()}(window);
+    </script>
+    <style>
+        .xts_inner_tab{}
+        .xts_inner_tab .hd ul li{width:50%;border-top:1px solid #684e16;border-bottom:1px solid #080a0d;height:.8rem;line-height:.8rem;background-color:#1b1c1e;text-align:center;float:left;}
+        .xts_inner_tab .hd ul li a{color:#404145;}
+        .xts_inner_tab .hd ul li.on{background-color:#684e16;}
+        .xts_inner_tab .hd ul li.on a{color:#efb852;}
+        .tab-panel.tab-panel-2{padding:.3rem;}
+    </style>
+</head>
+<body>
+<!--顶部-->
+<!-- <div class="com-top">
+    <a href="javascript:window.history.back();" class="spr-btn_return"></a>
+    观赛小贴士
+    <a href="javascript:;" class="spr-btn_share"></a>
+</div> -->
+<!--tab-->
+<div class="com-wrap page-traffic" style="background-color:#1b1c1e">
+
+    <div class="tab xts_inner_tab" id="xts_inner_tab">
+        <div class="hd">
+            <ul class="clearfix">
+                <li class="on"><a href="javascript:void(0);">周边交通</a></li>
+                <li><a href="javascript:void(0);">温馨提示</a></li>
+            </ul>
+        </div>
+        <div class="bd">
+            <!--周边交通-->
+            <div class="tab-panel tab-panel-1">
+                <p class="section-bt clearfix">
+                    <span class="comm-icon spr-smicon_stationname"></span>
+                    <span style="width:6.2rem;" id="vVenueNameToo"></span>
+                </p>
+                <p class="section-bt clearfix">
+                    <span class="comm-icon spr-smicon_stationaddress"></span>
+                    <span style="width:6.2rem;" id="vVenueAddress"></span>
+                </p>
+                <p class="section-bt clearfix">
+                    <span class="comm-icon spr-smicon_stationtraffic"></span>
+                    <span style="width:6.2rem;" id="vTraffic"></span>
+                </p>
+                <div class="img_box" style="padding-bottom:1.1rem;">
+                    <img id="vVenueImg"  src="//ossweb-img.qq.com/images/lpl/m/web201704/target_address.jpg" alt="大连大麦体育文化中心">
+                </div>
+            </div>
+            <!--全场回放-->
+            <div class="tab-panel tab-panel-2" style="display: none">
+                <p id="vGoodTips">购票下单成功后需在15分钟内完成支付，如未支付成功的订单，将在下单15分钟后系统自动取消，所选价位将自动释放后重新点亮。届时大家可及时刷新购票页面进行购买。 </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="//pub.idqqimg.com/qqmobile/qqapi.js?_bid=152"></script>
+<script src="//ossweb-img.qq.com/images/js/zepto/zepto.min.js"></script>
+<script src="//ossweb-img.qq.com/images/js/mobile_build/milo.js"></script>
+<script src="//ossweb-img.qq.com/images/js/login/loginmanagerv3.js" charset="gb2312"></script>
+<script src="http://lpl.qq.com/web201612/data/LOLTicketInfoAll.js"></script>
+<script src="http://lpl.qq.com/web201612/data/LOL_NEWMATCH_MOBILE_SHARE_CONFIG_INFO.js"></script>
+<script src="//lol.qq.com/m/public/LOL_App.js"></script>
+<script src="js/login.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/share.js" charset="gbk"></script>
+<script src="js/comm.js"></script>
+<script src="js/ticket.js"></script>
+<script>
+    /*tab切换*/
+    cimi.tabSwitch('xts_inner_tab');
+
+    /*售票处高亮*/
+    $('#comm_nav li').eq(3).addClass('on').siblings('li').removeClass('on');
+    //二级页面导航置灰
+    $('#comm_nav li').removeClass('on');
+    TICKET.Init();
+    TICKET.InitTicketTrafficInfo();
+</script>
+
+
+<script src="//pingjs.qq.com/ping_tcss_ied.js"></script>
+<script>if(typeof(pgvMain) == 'function')pgvMain({virtualDomain: "lol.qq.com"});</script>
+</body>
+</html><!--[if !IE]>|xGv00|ccd7b8865a9c27b6245bf6310cd2562c<![endif]-->

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="gbk">
+    <meta name="robots" content="all" />
+    <meta name="Copyright" content="Tencent" />
+    <meta name="author" content="Tencent-CP" />
+    <meta name="keywords" content="英雄联盟,lol,lol新手礼包,lol攻略,lol视频,lol视频攻略,英雄资料,英雄联盟战争学院,明星解说视频,101战争学院,英雄,攻略,WCG,点亮图标,赛事"/>
+    <meta name="description" content="英雄联盟官方网站，海量风格各异的英雄，丰富、便捷的物品合成系统，游戏内置的匹配、排行和竞技系统，独创的“召唤师”系统及技能、符文、天赋等系统组合，必将带你进入一个崭新而又丰富多彩的游戏世界。"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>英雄联盟赛事-精彩集锦</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/comm.css">
+    <!-- 设计：cp | 重构：cp | 创建：2017-04-06| 团队博客：http://tgideas.qq.com/ -->
+    <script>
+        !function(){function a(){document.documentElement.style.fontSize=document.documentElement.clientWidth/750*10/16*1000+"%"}var b=null;window.addEventListener("resize",function(){clearTimeout(b);b=setTimeout(a,300)},!1);a()}(window);
+    </script>
+    <style>
+        .scroll-box{width:100%;overflow-y: scroll;-webkit-overflow-scrolling:touch;}
+        /* .news-box .news-item:last-child{padding-bottom:1rem;} */
+    </style>
+</head>
+<body>
+<!--顶部-->
+<!-- <div class="com-top">
+    <a href="javascript:window.history.back();" class="spr-btn_return" ontouchend="pgvSendClick({hottag:'m.videoCollection.btn.return'});"></a>
+    精彩集锦
+    <a href="javascript:;" class="spr-btn_share" ontouchend="pgvSendClick({hottag:'m.videoCollection.btn.share'});"></a>
+</div> -->
+<!--集锦-->
+<div class="com-wrap page-jijin" id="page_jijin">
+    <div class="liveRoom">
+        <!--视频-->
+        <div class="comm-video" id="video_item">
+
+        </div>
+        <!--支持率-->
+        <div class="support-section" style="display:none;">
+            <div class="whole-progress bgColor-red clearfix">
+                <!--控制百分比-->
+                <p class="comm-support blue-part bgColor-blue fl">
+                    <span class="s-team-txt">
+                        <i class="s-team-name">EDG</i>
+                        <i class="blue-part-percent">25%</i>
+                    </span>
+                    <!--
+                    spr-support          支持
+                    spr-supported        已支持
+                    spr-support_grey     支持置灰
+                    spr-supported_grey   已支持置灰
+                    -->
+                    <a href="javascript:COLLECTION.TeamSupport('A');" class="spr-supported" ontouchend="pgvSendClick({hottag:'m.videoCollection.btn.supported'});"></a>
+                </p>
+                <p class="comm-support red-part fr">
+                    <a href="javascript:COLLECTION.TeamSupport('B');" class="spr-support" ontouchend="pgvSendClick({hottag:'m.videoCollection.btn.support'});"></a>
+                    <span class="s-team-txt">
+                        <i class="s-team-name">RNG</i>
+                        <i class="blue-part-percent">75%</i>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <!--tab切换-->
+        <div class="tab jijin-tab" id="videos_inner_tab">
+            <div class="hd">
+                <ul class="clearfix">
+                    <li class="on"><a href="javascript:void(0);" ontouchend="pgvSendClick({hottag:'m.videoCollection.btn.peaktime'});">巅峰时刻</a></li>
+                    <li><a href="javascript:void(0);" ontouchend="pgvSendClick({hottag:'m.videoCollection.btn.recall'});">全场回放</a></li>
+                </ul>
+            </div>
+            <div class="bd scroll-box">
+                <!--巅峰时刻-->
+                <div class="tab-panel tab-panel-1">
+                    <div class="news-box">
+                         <!--<a href="javascript:videoPlay('m0391j5b4kl','video_item',true);" class="news-item">
+                            <div class="new-item-left">
+                                <p class="news-title">
+                                    <span>RNG在赢下本场比赛后，积9分稳坐A组榜首。</span>
+                                </p>
+                                <p class="sub-txt-2">
+                                    <span class="spr-smicon_playnum"></span>
+                                    <span>播放量:</span>
+                                    <span class="play-num">4356</span>
+                                    &nbsp;&nbsp;
+                                    <span>17</span><span>小时前</span>
+                                </p>
+                            </div>
+                            <div class="new-item-right">
+                                <span class="video-box news-pics fitSize">
+                                    <img src="//ossweb-img.qq.com/images/lpl/m/web201704/ex_3.jpg" alt="">
+                                    <i class="video-duration">2:07</i>
+                                </span>
+                            </div>
+                        </a>
+                        <a href="javascript:videoPlay('z03900ooc2j','video_item',true);" class="news-item">
+                            <div class="new-item-left">
+                                <p class="news-title">
+                                    <span>RNG在赢下本场比赛后，积9分稳坐A组榜首。</span>
+                                </p>
+                                <p class="sub-txt-2">
+                                    <span class="spr-smicon_playnum"></span>
+                                    <span>播放量:</span>
+                                    <span class="play-num">4356</span>
+                                    &nbsp;&nbsp;
+                                    <span>17</span><span>小时前</span>
+                                </p>
+                            </div>
+                            <div class="new-item-right">
+                                <span class="video-box news-pics fitSize">
+                                    <img src="//ossweb-img.qq.com/images/lpl/m/web201704/ex_1.jpg" alt="">
+                                    <i class="video-duration">2:07</i>
+                                </span>
+                            </div>
+                        </a>
+                        <a href="javascript:videoPlay('m0391j5b4kl','video_item',true);" class="news-item">
+                            <div class="new-item-left">
+                                <p class="news-title">
+                                    <span>RNG在赢下本场比赛后，积9分稳坐A组榜首。</span>
+                                </p>
+                                <p class="sub-txt-2">
+                                    <span class="spr-smicon_playnum"></span>
+                                    <span>播放量:</span>
+                                    <span class="play-num">4356</span>
+                                    &nbsp;&nbsp;
+                                    <span>17</span><span>小时前</span>
+                                </p>
+                            </div>
+                            <div class="new-item-right">
+                                <span class="video-box news-pics fitSize">
+                                    <img src="//ossweb-img.qq.com/images/lpl/m/web201704/ex_2.jpg" alt="">
+                                    <i class="video-duration">2:07</i>
+                                </span>
+                            </div>
+                        </a>
+                        <a href="javascript:videoPlay('z03900ooc2j','video_item',true);" class="news-item">
+                            <div class="new-item-left">
+                                <p class="news-title">
+                                    <span>RNG在赢下本场比赛后，积9分稳坐A组榜首。</span>
+                                </p>
+                                <p class="sub-txt-2">
+                                    <span class="spr-smicon_playnum"></span>
+                                    <span>播放量:</span>
+                                    <span class="play-num">4356</span>
+                                    &nbsp;&nbsp;
+                                    <span>17</span><span>小时前</span>
+                                </p>
+                            </div>
+                            <div class="new-item-right">
+                                <span class="video-box news-pics fitSize">
+                                    <img src="//ossweb-img.qq.com/images/lpl/m/web201704/ex_4.jpg" alt="">
+                                    <i class="video-duration">2:07</i>
+                                </span>
+                            </div>
+                        </a>-->
+                    </div>
+                </div>
+                <!--全场回放-->
+                <div class="tab-panel tab-panel-2" style="display: none">
+                    <div class="news-box">
+                        <!-- <a href="javascript:videoPlay('z03900ooc2j','video_item',true);" class="news-item">
+                        <div class="new-item-left">
+                            <p class="news-title">
+                                <span>RNG在赢下本场比赛后，积9分稳坐A组榜首。</span>
+                            </p>
+                            <p class="sub-txt-2">
+                                <span class="spr-smicon_playnum"></span>
+                                <span>播放量:</span>
+                                <span class="play-num">4356</span>
+                                &nbsp;&nbsp;
+                                <span>17</span><span>小时前</span>
+                            </p>
+                        </div>
+                        <div class="new-item-right">
+                                <span class="video-box news-pics fitSize">
+                                    <img src="//ossweb-img.qq.com/images/lpl/m/web201704/ex_4.jpg" alt="">
+                                    <i class="video-duration">2:07</i>
+                                </span>
+                        </div>
+                    </a>
+                        <a href="javascript:videoPlay('m0391j5b4kl','video_item',true);;" class="news-item">
+                            <div class="new-item-left">
+                                <p class="news-title">
+                                    <span>RNG在赢下本场比赛后，积9分稳坐A组榜首。</span>
+                                </p>
+                                <p class="sub-txt-2">
+                                    <span class="spr-smicon_playnum"></span>
+                                    <span>播放量:</span>
+                                    <span class="play-num">4356</span>
+                                    &nbsp;&nbsp;
+                                    <span>17</span><span>小时前</span>
+                                </p>
+                            </div>
+                            <div class="new-item-right">
+                                <span class="video-box news-pics fitSize">
+                                    <img src="//ossweb-img.qq.com/images/lpl/m/web201704/ex_3.jpg" alt="">
+                                    <i class="video-duration">2:07</i>
+                                </span>
+                            </div>
+                        </a>
+                        <a href="javascript:videoPlay('z03900ooc2j','video_item',true);" class="news-item">
+                            <div class="new-item-left">
+                                <p class="news-title">
+                                    <span>RNG在赢下本场比赛后，积9分稳坐A组榜首。</span>
+                                </p>
+                                <p class="sub-txt-2">
+                                    <span class="spr-smicon_playnum"></span>
+                                    <span>播放量:</span>
+                                    <span class="play-num">4356</span>
+                                    &nbsp;&nbsp;
+                                    <span>17</span><span>小时前</span>
+                                </p>
+                            </div>
+                            <div class="new-item-right">
+                                <span class="video-box news-pics fitSize">
+                                    <img src="//ossweb-img.qq.com/images/lpl/m/web201704/ex_3.jpg" alt="">
+                                    <i class="video-duration">2:07</i>
+                                </span>
+                            </div>
+                        </a>
+                        <a href="javascript:videoPlay('m0391j5b4kl','video_item',true);;" class="news-item">
+                            <div class="new-item-left">
+                                <p class="news-title">
+                                    <span>RNG在赢下本场比赛后，积9分稳坐A组榜首。</span>
+                                </p>
+                                <p class="sub-txt-2">
+                                    <span class="spr-smicon_playnum"></span>
+                                    <span>播放量:</span>
+                                    <span class="play-num">4356</span>
+                                    &nbsp;&nbsp;
+                                    <span>17</span><span>小时前</span>
+                                </p>
+                            </div>
+                            <div class="new-item-right">
+                                <span class="video-box news-pics fitSize">
+                                    <img src="//ossweb-img.qq.com/images/lpl/m/web201704/ex_3.jpg" alt="">
+                                    <i class="video-duration">2:07</i>
+                                </span>
+                            </div>
+                        </a>
+                        <a href="javascript:videoPlay('z03900ooc2j','video_item',true);" class="news-item">
+                            <div class="new-item-left">
+                                <p class="news-title">
+                                    <span>RNG在赢下本场比赛后，积9分稳坐A组榜首。</span>
+                                </p>
+                                <p class="sub-txt-2">
+                                    <span class="spr-smicon_playnum"></span>
+                                    <span>播放量:</span>
+                                    <span class="play-num">4356</span>
+                                    &nbsp;&nbsp;
+                                    <span>17</span><span>小时前</span>
+                                </p>
+                            </div>
+                            <div class="new-item-right">
+                                <span class="video-box news-pics fitSize">
+                                    <img src="//ossweb-img.qq.com/images/lpl/m/web201704/ex_3.jpg" alt="">
+                                    <i class="video-duration">2:07</i>
+                                </span>
+                            </div>
+                        </a>
+                        <a href="javascript:videoPlay('m0391j5b4kl','video_item',true);;" class="news-item">
+                            <div class="new-item-left">
+                                <p class="news-title">
+                                    <span>RNG在赢下本场比赛后，积9分稳坐A组榜首。</span>
+                                </p>
+                                <p class="sub-txt-2">
+                                    <span class="spr-smicon_playnum"></span>
+                                    <span>播放量:</span>
+                                    <span class="play-num">4356</span>
+                                    &nbsp;&nbsp;
+                                    <span>17</span><span>小时前</span>
+                                </p>
+                            </div>
+                            <div class="new-item-right">
+                                <span class="video-box news-pics fitSize">
+                                    <img src="//ossweb-img.qq.com/images/lpl/m/web201704/ex_3.jpg" alt="">
+                                    <i class="video-duration">2:07</i>
+                                </span>
+                            </div>
+                        </a>
+                        <a href="javascript:videoPlay('z03900ooc2j','video_item',true);" class="news-item">
+                            <div class="new-item-left">
+                                <p class="news-title">
+                                    <span>RNG在赢下本场比赛后，积9分稳坐A组榜首。</span>
+                                </p>
+                                <p class="sub-txt-2">
+                                    <span class="spr-smicon_playnum"></span>
+                                    <span>播放量:</span>
+                                    <span class="play-num">4356</span>
+                                    &nbsp;&nbsp;
+                                    <span>17</span><span>小时前</span>
+                                </p>
+                            </div>
+                            <div class="new-item-right">
+                                <span class="video-box news-pics fitSize">
+                                    <img src="//ossweb-img.qq.com/images/lpl/m/web201704/ex_3.jpg" alt="">
+                                    <i class="video-duration">2:07</i>
+                                </span>
+                            </div>
+                        </a>
+                        <a href="javascript:videoPlay('m0391j5b4kl','video_item',true);;" class="news-item">
+                            <div class="new-item-left">
+                                <p class="news-title">
+                                    <span>RNG在赢下本场比赛后，积9分稳坐A组榜首。</span>
+                                </p>
+                                <p class="sub-txt-2">
+                                    <span class="spr-smicon_playnum"></span>
+                                    <span>播放量:</span>
+                                    <span class="play-num">4356</span>
+                                    &nbsp;&nbsp;
+                                    <span>17</span><span>小时前</span>
+                                </p>
+                            </div>
+                            <div class="new-item-right">
+                                <span class="video-box news-pics fitSize">
+                                    <img src="//ossweb-img.qq.com/images/lpl/m/web201704/ex_3.jpg" alt="">
+                                    <i class="video-duration">2:07</i>
+                                </span>
+                            </div>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div style="height:1rem;"></div> -->
+
+<script src="//pub.idqqimg.com/qqmobile/qqapi.js?_bid=152"></script>
+<script src="//ossweb-img.qq.com/images/js/zepto/zepto.min.js"></script>
+<script src="//ossweb-img.qq.com/images/js/mobile_build/milo.js"></script>
+<script src="//ossweb-img.qq.com/images/js/login/loginmanagerv3.js" charset="gb2312"></script>
+<script src="//imgcache.gtimg.cn/tencentvideo_v1/tvp/js/tvp.player_v2.js" charset="utf-8"></script>
+<script src="http://lpl.qq.com/web201612/data/LOL_MATCH2_TEAM_LIST.js"></script>
+<script src="http://lpl.qq.com/web201612/data/LOL_NEWMATCH_MOBILE_SHARE_CONFIG_INFO.js"></script>
+<script src="//ossweb-img.qq.com/images/js/TGMobileShare/TGMobileShare.min.js"></script>
+<script src="//lol.qq.com/m/public/LOL_App.js"></script>
+<script src="js/login.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/comm.js"></script>
+<script src="js/share.js" charset="gbk"></script>
+<script src="js/public.js"></script>
+<script src="js/VideoCollection.js"></script>
+<script>
+    //限制滑动范围
+       $(window).on('load',function(){
+    	var $target = $('#page_jijin .liveRoom');
+        var $windowHeight = $(window).height();
+        var $section1 = $target.find('.comm-video');
+        var $section2 = $target.find('.support-section');
+        var $section3 = $target.find('.jijin-tab .hd');
+        var $nav = $('#comm_nav');
+ 		var $height = $windowHeight-$section1.height()-$section2.height()-$section3.height()-$nav.height();
+        $target.find('.jijin-tab .bd').height($height);
+    });
+    /*tab切换*/
+    cimi.tabSwitch('videos_inner_tab');
+    /*视频初始化*/
+    // videoPlay('m0391j5b4kl',"video_item",true);
+    //二级页面导航置灰
+    $('#comm_nav li').removeClass('on');
+    milo.ready(function(){
+        COLLECTION.Init();
+    })
+</script>
+
+<script src="//pingjs.qq.com/ping_tcss_ied.js"></script>
+<script>if(typeof(pgvMain) == 'function')pgvMain({virtualDomain: "lol.qq.com"});</script>
+</body>
+</html><!--[if !IE]>|xGv00|b013fb990f4233cad5f40656ffcdb411<![endif]-->

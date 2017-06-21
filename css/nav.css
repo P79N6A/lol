@@ -1,0 +1,42 @@
+.g-nav {
+  width: 7.50rem;
+  position:fixed;
+  bottom:0;left:50%;margin-left:-3.75rem;z-index:999;
+}
+.g-nav ul {
+  width: 100%; }
+.g-nav ul > li {
+  position: relative;
+  width: 25%;
+  float: left;
+  height: 1.00rem;
+  background-color: #000;
+  color: #acacac;
+  font-size: .24rem;
+  cursor: pointer; }
+.g-nav ul > li a{display:block;}
+.g-nav ul > li span {
+  display: block;
+  color:#acacac;
+  text-align: center;
+  line-height: 1.6; }
+.g-nav ul > li + li:before {
+  content: "";
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -1px;
+  background-color: #252525; }
+.g-nav ul > li.on {
+  background: url(//ossweb-img.qq.com/images/lpl/m/web201704/bg_nav.jpg) no-repeat;
+  background-size: 100%; }
+.g-nav ul > li.on .nav-item {
+  display:block;
+  background-position-y: -.63rem; }
+.g-nav ul > li.on span {
+  color: #cea04a; }
+.g-nav ul > li.on + li:before {
+  display: none; }
+.g-nav .nav-item {
+  margin: 0 auto; }/*  |xGv00|d1b89ee98e410fa10257a2c408aa3cdd */

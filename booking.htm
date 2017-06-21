@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="gbk">
+    <meta name="robots" content="all" />
+    <meta name="Copyright" content="Tencent" />
+    <meta name="author" content="Tencent-CP" />
+    <meta name="keywords" content="英雄联盟,lol,lol新手礼包,lol攻略,lol视频,lol视频攻略,英雄资料,英雄联盟战争学院,明星解说视频,101战争学院,英雄,攻略,WCG,点亮图标,赛事"/>
+    <meta name="description" content="英雄联盟官方网站，海量风格各异的英雄，丰富、便捷的物品合成系统，游戏内置的匹配、排行和竞技系统，独创的“召唤师”系统及技能、符文、天赋等系统组合，必将带你进入一个崭新而又丰富多彩的游戏世界。"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>英雄联盟赛事售票</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/comm.css">
+    <!-- 设计：cp | 重构：cp | 创建：2017-04-06| 团队博客：http://tgideas.qq.com/ -->
+    <script>
+        !function(){function a(){document.documentElement.style.fontSize=document.documentElement.clientWidth/750*10/16*1000+"%"}var b=null;window.addEventListener("resize",function(){clearTimeout(b);b=setTimeout(a,300)},!1);a()}(window);
+    </script>
+    <style>
+        .booking-wrap .m-filter {padding: .30rem 0;text-align: center;font-size: 0;background: #11151c;}
+        .booking-wrap .m-filter .time-picker {width: 2.20rem;height: .60rem;display: inline-block;vertical-align: middle;text-align: center;font-size: .24rem;color: #fff;border-radius: .30rem;border: .02rem solid #28292c;background: none;position: relative}
+        .booking-wrap .m-filter .time-picker input {opacity: 0;position: absolute;top: 0;left: 0;display: block;width: 100%;height: 100%;z-index: 2}
+        .booking-wrap .m-filter .time-picker span {line-height: .60rem;}
+        .booking-wrap .m-filter > i {font-size: .26rem;color: #7a7a7a;margin: 0 .20rem;line-height: .60rem;display: inline-block;vertical-align: middle;font-style: normal}
+        .booking-wrap .m-filter .btn-faq {display: inline-block;vertical-align: middle;font-size: .26rem;color: #848484;width: 1.84rem;height: .60rem;line-height: .60rem;text-align: center;border-radius: .30rem;border: .02rem solid #28292c;margin: 0 0 0 .20rem;}
+        .booking-wrap .m-filter .btn-faq:before {content: "";display: inline-block;vertical-align: middle;margin: 0 .10rem .03rem 0;background: url(//ossweb-img.qq.com/images/lpl/m/web201704/icon_faq.png) no-repeat center/100%;width: .15rem;height: .20rem;}
+
+        .booking-wrap .m-booking-list li {padding: .30rem .20rem;height: 3.16rem;position: relative;border-bottom: 1px solid #080a0d;}
+        .booking-wrap .m-booking-list li:after {content: "";display: block;position: absolute;top: 1rem;right: .20rem;background: url(//ossweb-img.qq.com/images/lpl/m/web201704/icon_right.png) no-repeat center/100%;width: .11rem;height: .20rem;}
+        .booking-wrap .m-booking-list li > img {display: block;float: left;width: 2.30rem;height:2.30rem;margin-top:0.43rem}
+        .booking-wrap .m-booking-list li .m-info {float: left;width: 4.28rem;margin-left: .25rem;}
+        .booking-wrap .m-booking-list li h2 {font-size: .28rem;font-weight: normal;color: #fff;line-height: .34rem;}
+        .booking-wrap .m-booking-list li h2 span {margin-left: .18rem;display: inline-block;vertical-align: middle;width: .74rem;height: .34rem;line-height: .34rem;border-radius: .04rem;font-size: .18rem;text-align: center;}
+        .booking-wrap .m-booking-list li h2 span.sell-status-1 {border: 1px solid #4b70f3;color: #4b70f3}
+        .booking-wrap .m-booking-list li h2 span.sell-status-2 {border: 1px solid #f62c1f;color: #f62c1f}
+        .booking-wrap .m-booking-list li h2 span.sell-status-3 {border: 1px solid #7a7a7a;color: #7a7a7a}
+        .booking-wrap .m-booking-list li h3 {font-size: .3rem;color: #cea04a;font-weight: normal;line-height: .50rem;}
+        .booking-wrap .m-booking-list li .time {font-size: .2rem;color: #5f6064;line-height: .4rem;  height: .4rem; white-space:nowrap;text-overflow: ellipsis;overflow:hidden;}
+        .booking-wrap .m-booking-list li .place {font-size: .2rem;color: #5f6064;height: .4rem;line-height: .4rem;overflow: hidden;display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1;text-overflow: ellipsis;}
+        .booking-wrap .m-booking-list li .btn-buy-0,.booking-wrap .m-booking-list li .btn-buy-1{display: block;    margin-top: .16rem;width: 2rem;height: .70rem;line-height: .70rem;text-align: center;font-size: .3rem;border-radius: .04rem;position: relative;z-index: 2}
+        .booking-wrap .m-booking-list li .btn-buy-0{background-color:#404145;color:#848484;}
+        .booking-wrap .m-booking-list li .btn-buy-1{background-color:#684e16;color:#ffc65b;}
+        .booking-wrap .m-booking-list li .btn-detail {display: block;position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
+        .price{font-size:.28rem;color:#5f6064;font-weight:normal;height:.46rem;line-height:.46rem;}
+        .price em{color:#cea04a;font-style:normal;}
+        .division{width:4.46rem;height:1px;margin:.1rem 0;}
+    </style>
+</head>
+<body>
+
+<!--售票列表-->
+<div class="com-wrap booking-wrap" style="padding-top: 0;">
+    <div class="m-filter">
+        <a href="javascript:" class="time-picker" id="startDatePicker" ontouchend="pgvSendClick({hottag:'m.booking.btn.selecttime'});">
+            <span></span>
+            <input type="date">
+        </a>
+        <i>~</i>
+        <a href="javascript:" class="time-picker" id="endDatePicker" ontouchend="pgvSendClick({hottag:'m.booking.btn.selecttime'});">
+            <span></span>
+            <input type="date">
+        </a>
+        <a href="faq.htm" class="btn-faq" ontouchend="pgvSendClick({hottag:'m.booking.btn.faq'});">常见问题</a>
+    </div>
+
+    <!--sell-status-1 预售中, sell-status-2 售票中, sell-status-3 已停售-->
+    <ul class="m-booking-list">
+
+    </ul>
+</div>
+<div style="height:1rem;"></div>
+<!--系统弹窗-->
+<div class="pop pop-tips" id="sys1" style="display: none;">
+    <div class="pop-con">
+        <div class="pop-tit">温馨提示</div>
+        <div class="pop-txt">
+            <p id="sys_info1"></p>
+        </div>
+    </div>
+    <a class="dia_close" href="javascript:;" onClick="closeDialog()" title="关闭">关闭</a>
+</div>
+<!--系统弹窗-->
+<div class="pop pop-tips" id="sys2" style="display: none;">
+    <div class="pop-con">
+        <div class="pop-tit">温馨提示</div>
+        <div class="pop-txt">
+            <p id="sys_info2"></p>
+        </div>
+    </div>
+</div>
+<script src="//pub.idqqimg.com/qqmobile/qqapi.js?_bid=152"></script>
+<script src="//ossweb-img.qq.com/images/js/zepto/zepto.min.js"></script>
+<script src="//ossweb-img.qq.com/images/js/mobile_build/milo.js"></script>
+<script src="//ossweb-img.qq.com/images/js/login/loginmanagerv3.js" charset="gb2312"></script>
+<script src="http://lpl.qq.com/web201612/data/LOLTicketInfoAll.js"></script>
+<script src="http://lpl.qq.com/web201612/data/LOL_MATCH2_GAME_LIST_BRIEF.js"></script>
+<script src="http://lpl.qq.com/web201612/data/LOL_NEWMATCH_MOBILE_SHARE_CONFIG_INFO.js"></script>
+<script src="//ossweb-img.qq.com/images/js/TGMobileShare/TGMobileShare.min.js"></script>
+<script src="//lol.qq.com/m/public/LOL_App.js"></script>
+<script src="js/login.js"></script>
+<script src="js/share.js" charset="gbk"></script>
+<script src="js/nav.js"></script>
+<script src="js/comm.js"></script>
+<script src="js/ticket.js"></script>
+<script>
+
+    function TGDialogS(e){
+        var p = $('#' + e);
+        if (p) {
+            p.show();
+            p.css({
+                position: 'fixed',
+                top: ($(window).height() - p.height()) / 2,
+                left: ($(window).width() - p.width()) / 2,
+                zIndex: 11
+            });
+            p.attr('for', 'pop');
+            p.after('<div for="overlay" style="width:100%;height:100%;position:fixed;top:0;left:0;z-index:10;background:rgba(0,0,0,0.6);"></div>');
+            $('[for="overlay"]').on('tap', closeDialog);
+        }
+    }
+    function closeDialog(){
+        $('[for="pop"]').hide();
+        $('[for="overlay"]').remove();
+    }
+    var bookingJs = {
+        init: function () {
+            //初始化日期选择器
+            bookingJs.initDatePicker('#startDatePicker', new Date());
+            var nowDate = new Date();
+            nowDate.setDate(nowDate.getDate()+7);
+            bookingJs.initDatePicker('#endDatePicker', nowDate);
+        },
+        //初始化时间选择器
+        initDatePicker: function (o,initDate) {
+            _format(o, initDate,false);
+            $(o).on('blur change', function () {
+                _format(o, new Date($(this).find('input').val()),true);
+            });
+
+            function _format(o, date,flag) {
+                var dateVal = bookingJs.dateFormat('yyyy-MM-dd', date);
+                var dateHtml = bookingJs.dateFormat('MM-dd EE', date);
+                //span的html是显示“MM-dd 周X”，value属性显示“2017-04-07”
+                $(o).find('span').html(dateHtml).attr('value', dateVal);
+                if(flag){
+                    TICKET.InitTicketList();
+                }
+            }
+        },
+        /**
+         * 对Date的扩展，将 Date 转化为指定格式的String
+         * 月(M)、日(d)、12小时(h)、24小时(H)、分(m)、秒(s)、周(E)、季度(q) 可以用 1-2 个占位符
+         * 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字)
+         * eg:
+         * cimi.dateFormat("yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423
+         * cimi.dateFormat("yyyy-MM-dd E HH:mm:ss") ==> 2009-03-10 二 20:09:04
+         * cimi.dateFormat("yyyy-MM-dd EE hh:mm:ss") ==> 2009-03-10 周二 08:09:04
+         * cimi.dateFormat("yyyy-MM-dd EEE hh:mm:ss") ==> 2009-03-10 星期二 08:09:04
+         * cimi.dateFormat("yyyy-M-d h:m:s.S") ==> 2006-7-2 8:9:4.18
+         */
+        dateFormat: function (fmt, date) {
+            var o = {
+                "M+" : date.getMonth()+1, //月份
+                "d+" : date.getDate(), //日
+                "h+" : date.getHours()%12 == 0 ? 12 : date.getHours()%12, //小时
+                "H+" : date.getHours(), //小时
+                "m+" : date.getMinutes(), //分
+                "s+" : date.getSeconds(), //秒
+                "q+" : Math.floor((date.getMonth()+3)/3), //季度
+                "S" : date.getMilliseconds() //毫秒
+            };
+            var week = {
+                "0" : "\u65e5",
+                "1" : "\u4e00",
+                "2" : "\u4e8c",
+                "3" : "\u4e09",
+                "4" : "\u56db",
+                "5" : "\u4e94",
+                "6" : "\u516d"
+            };
+            if(/(y+)/.test(fmt)){
+                fmt=fmt.replace(RegExp.$1, (date.getFullYear()+"").substr(4 - RegExp.$1.length));
+            }
+            if(/(E+)/.test(fmt)){
+                fmt=fmt.replace(RegExp.$1, ((RegExp.$1.length>1) ? (RegExp.$1.length>2 ? "\u661f\u671f" : "\u5468") : "")+week[date.getDay()+""]);
+            }
+            for(var k in o){
+                if(new RegExp("("+ k +")").test(fmt)){
+                    fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+                }
+            }
+
+            return fmt;
+        }
+    };
+
+    bookingJs.init();
+
+
+
+    milo.ready(function() {
+        TICKET.Init();
+        TICKET.InitTicketList();
+    })
+
+</script>
+
+<script src="//pingjs.qq.com/ping_tcss_ied.js"></script>
+<script>if(typeof(pgvMain) == 'function')pgvMain({virtualDomain: "lol.qq.com"});</script>
+</body>
+</html><!--[if !IE]>|xGv00|74968a454a419ce9a45206d0f7dfbdf0<![endif]-->

@@ -1,0 +1,32 @@
+.m-login {
+  position: fixed;
+  right: 0;
+  bottom: 1.6rem;
+  min-width: 1.4rem;
+  /*height: 0.56rem;*/
+  line-height: 0.56rem;
+  padding: 0 .06rem;
+  color: #efb852;
+  font-size: 0.26rem;
+  text-align: center;
+  background-color: rgba(11, 11, 12, 0.75);
+  border-top: 0.02rem solid #684e16;
+  border-bottom: 0.02rem solid #684e16;
+  z-index:9999;
+}
+.m-login a {
+  color: #efb852;
+  text-decoration: none; }
+.m-login:before {
+  content: "";
+  width: 0.21rem;
+  /*height: 0.6rem;*/
+  height:100%;
+  background: url(//ossweb-img.qq.com/images/lpl/m/web201704/login_bg_part.png) no-repeat;
+  position: absolute;
+  top: 0;
+  left: -0.21rem;
+  background-size: 100% 100%;}
+.m-login .spr-smicon_user {
+  display: inline-block;
+  vertical-align: middle; }/*  |xGv00|ea26fb614f0b25b4c6e728934c4fa986 */

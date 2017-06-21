@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="gbk">
+    <meta name="robots" content="all" />
+    <meta name="Copyright" content="Tencent" />
+    <meta name="author" content="Tencent-CP" />
+    <meta name="keywords" content="英雄联盟,lol,lol新手礼包,lol攻略,lol视频,lol视频攻略,英雄资料,英雄联盟战争学院,明星解说视频,101战争学院,英雄,攻略,WCG,点亮图标,赛事"/>
+    <meta name="description" content="英雄联盟官方网站，海量风格各异的英雄，丰富、便捷的物品合成系统，游戏内置的匹配、排行和竞技系统，独创的“召唤师”系统及技能、符文、天赋等系统组合，必将带你进入一个崭新而又丰富多彩的游戏世界。"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>英雄联盟赛事官网</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/comm.css">
+    <!-- 设计：cp | 重构：cp | 创建：2017-04-06| 团队博客：http://tgideas.qq.com/ -->
+    <script>
+        !function(){function a(){document.documentElement.style.fontSize=document.documentElement.clientWidth/750*10/16*1000+"%"}var b=null;window.addEventListener("resize",function(){clearTimeout(b);b=setTimeout(a,300)},!1);a()}(window);
+    </script>
+</head>
+<body>
+
+<!--英雄联盟赛事首页-->
+<div class="com-wrap page-contest" id="page_contest" style="padding-top: 0;">
+    <!--展开收缩-->
+    <div class="m-spread-toggle">
+        <a href="javascript:;" onclick="cimi.toggleBox(this,'#live_box',true);liveVideo('18091377','live_video',false);
+" class="btn-spread child-ib" style="display:block" id="live-spread">
+            <span class="spr-btn_spread"></span>
+            <span id="openStatus">展开直播</span>
+        </a>
+        <div class="content-spread" id="live_box" style="display:none">
+            <!--直播视频-->
+            <div class="live-video-box">
+                <div class="live-video" id="live_video">
+
+                </div>
+                <p class="video-tit"></p>
+                <!--进入直播间-->
+                <a href="liveRoom.htm" class="enter-live" id="enter_live" style="display:none" title="进入直播间"></a>
+            </div>
+
+            <a href="javascript:;" onclick="cimi.toggleBox('#live_box','#live-spread',true)" class="btn-hide child-ib" style="display:block">
+                <span class="spr-btn_hide"></span>
+                <span id="closeStatus">收起直播</span>
+            </a>
+        </div>
+    </div>
+    <!--赛程-->
+    <!--
+    btn_seeAll       ---观看集锦
+    btn_seeLive      ---直播中
+    btn_subscribe    ---订阅比赛
+    btn_subscribed   ---已订阅
+    -->
+    <div class="m-contests-box" id="matchList">
+    </div>
+    <!--新闻-->
+    <div class="news-box"  id="news-box">
+    </div>
+</div>
+
+<div style="height:1rem;"></div>
+
+<script src="//pub.idqqimg.com/qqmobile/qqapi.js?_bid=152"></script>
+<script src="//ossweb-img.qq.com/images/js/zepto/zepto.min.js"></script>
+<script src="//ossweb-img.qq.com/images/js/mobile_build/milo.js"></script>
+<script src="//ossweb-img.qq.com/images/js/login/loginmanagerv3.js" charset="gb2312"></script>
+<script src="//imgcache.gtimg.cn/tencentvideo_v1/tvp/js/tvp.player_v2.js" charset="utf-8"></script>
+<script src="http://lpl.qq.com/web201612/data/LOL_MATCH2_LIVE_BMATCH_LIST.js"></script>
+<script src="http://lpl.qq.com/web201612/data/LOL_MATCH2_TEAM_LIST.js"></script>
+<script src="http://lpl.qq.com/web201612/data/LOL_NEWMATCH_FIRPAGE_GROUP_TEAM_SCORE.js"></script>
+<script src="http://lpl.qq.com/web201612/data/LOL_NEWMATCH_MOBILE_FIR_PAGE_NEWS_INFO.js"></script>
+<script src="http://lpl.qq.com/web201612/data/LOL_NEWMATCH_MOBILE_SHARE_CONFIG_INFO.js"></script>
+<script src="http://lpl.qq.com/web201612/data/LOL_MOBILE_FIRST_PAGE_BMATCH_INFO.js"></script>
+<script src="js/login.js"></script> 
+<script src="js/nav.js"></script>
+<script src="js/comm.js"></script>
+<script src="//lol.qq.com/m/public/LOL_App.js"></script>
+<script src="js/share.js" charset="gbk"></script>
+<script src="js/public.js"></script>
+<script src="js/index.js"></script>
+<script>
+
+milo.ready(function() {
+	MATCH.Init();
+	initShare('84');
+})
+
+$(window).on('scroll', function() {
+	if ($(window).scrollTop() + $(window).height() >= $(document).height()- $('.news-item')[0].clientHeight / 2 ) {
+		if ((!MATCH.dHasLoadAllNews) && (!MATCH.dIsLoading)) {
+			MATCH.dIsLoading = true;
+			MATCH.dPage++;
+			MATCH.NewsToPage();
+		}
+	}
+})
+</script>
+
+
+<script>
+
+</script>
+
+<script src="//pingjs.qq.com/ping_tcss_ied.js"></script>
+<script>if(typeof(pgvMain) == 'function')pgvMain({virtualDomain: "lol.qq.com"});</script>
+</body>
+</html><!--[if !IE]>|xGv00|97f28b2ffd4e85116d78b66bacb21e86<![endif]-->

@@ -1,0 +1,31 @@
+#top_reply h1 span{display: none;}
+#mainBody{background-color:#18191b;color:#848484;}
+#mainBody .np-title strong{color:#cea04a;}
+#mainBody .np-reply-box-content textarea{background-color:#303235;color:#A8A8A8;}
+#mainBody .np-btn-submit,.np-load-more{background-color:#684e16;color:#ffc65b;}
+#mainBody .np-nav-tab .np-active{border-color:#684e16;}
+.np-btn-submit, .np-btn-newreply, .np-tip-num, .np-tip-postnum, .np-tip-newpost, .np-btngroup .np-active{background-color: #684E16;}
+.np-btngroup .np-active, .np-btngroup .np-active:hover, .np-reply-box-active, .np-nav-tab .np-active, .np-nav-tab .np-active:hover{border-color: #684E16;}
+.np-person-info .np-user, .np-btn-submit:link, .np-btn-submit:visited, .np-btn-submit:active, .np-btn-submit:hover, .np-btn-newreply:link, .np-btn-newreply:visited, .np-btn-newreply:active, .np-btn-newreply:hover, .np-tip-postnum, .np-tip-num, .np-btngroup .np-active:link, .np-btngroup .np-active:visited, .np-btngroup .np-active:active, .np-btngroup .np-active:hover{color:#ffc65b;}
+.np-reply-box-active, .np-reply-box-active .np-reply-box-content{border-bottom: none;}
+.np-nav-tab, .np-post, .np-btngroup a{border-color: #000;}
+#linshi a{color: #cea04a;}
+.np-comment-list .np-post{padding-left: 52px;}
+.np-comment-list .np-avatar{left: 10px;}
+.np-title strong{padding-left: 8px;}
+.np-reply-box-active .np-reply-box-footer{padding-top: 14px;}
+.np-nav-tab{margin-top: 10px;}
+.np-btn.change{display:none;}
+#my-notification-list{background-color:#18191b;}
+.np-popframe, .np-frame .np-person-info-weak, .np-btn-report, .np-btngroup a{background-color: #18191b;}
+#my-notification-list .np-post{background:#000;}
+#my-notification-list .np-timeline .np-time{margin-right:8px;}
+#public_report{background:#18191b;width:100%;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;}
+#public_report input[type="text"]{color:#A8A8A8;}
+.np-report .np-report-submit:link, .np-report .np-report-submit:visited, .np-report .np-report-submit:active{background: #684e16;color: #ffc65b;}
+.np-report-footer a{border:none;}
+.np-report-header,.np-report{border-color:#000;}
+.popdelete{left:50%;margin-left:-100px;background:#18191b;border-color:#303235;}
+.popdelete .confirm, .popdeletee .confirm{background: #684e16;color: #ffc65b;border: none;}
+.popdelete .cancel, .popdelete .confirm, .popdeletee .cancel, .popdeletee .confirm{border:none;}
+.np-btngroup .np-active:hover{background-color: #684e16;}/*  |xGv00|0862d05fd6e279a7093bdb915e50be0e */

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="gbk">
+    <meta name="robots" content="all" />
+    <meta name="Copyright" content="Tencent" />
+    <meta name="author" content="Tencent-CP" />
+    <meta name="keywords" content="英雄联盟,lol,lol新手礼包,lol攻略,lol视频,lol视频攻略,英雄资料,英雄联盟战争学院,明星解说视频,101战争学院,英雄,攻略,WCG,点亮图标,赛事"/>
+    <meta name="description" content="英雄联盟官方网站，海量风格各异的英雄，丰富、便捷的物品合成系统，游戏内置的匹配、排行和竞技系统，独创的“召唤师”系统及技能、符文、天赋等系统组合，必将带你进入一个崭新而又丰富多彩的游戏世界。"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>英雄联盟赛事直播间</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/comm.css">
+    <!-- 设计：cp | 重构：cp | 创建：2017-04-06| 团队博客：http://tgideas.qq.com/ -->
+    <script>
+        !function(){function a(){document.documentElement.style.fontSize=document.documentElement.clientWidth/750*10/16*1000+"%"}var b=null;window.addEventListener("resize",function(){clearTimeout(b);b=setTimeout(a,300)},!1);a()}(window);
+    </script>
+    <style>
+        .fixed-float{position: fixed;right: 0;bottom:3.46rem;display: none;}
+        .fixed-float .list-links li{width: 1rem;height: 1.4rem;background-color: #542011;border: 1px solid #6d2a16;text-align: center;font-size: 0.16rem;position: relative;}
+        .fixed-float .list-links li:first-child{border-top-left-radius: 0.04rem;-webkit-border-top-left-radius: 0.04rem;}
+        .fixed-float .list-links li:first-child a{color: #ff9311;}
+        .fixed-float .list-links li:last-child{border-bottom-left-radius: 0.04rem;-webkit-border-bottom-left-radius: 0.04rem;}
+        .fixed-float .list-links li >a{display: block;width: 100%;height: 100%;position:absolute;top:0;left:0;color: #c03e19;}
+        .fixed-float .list-links li >a h4{font-size: 0.28rem;margin-top: 0.7rem;}
+        .fixed-float .list-links li .comm-size{display: block;width: 1rem;height: 0.75rem;}
+        .fixed-float .list-links li .u-treasure{display: block;position: absolute;top: 0;left: 50%;margin-left: -0.5rem;background: url(//ossweb-img.qq.com/images/lpl/m/web201704/pic_treasure.png) no-repeat;background-size:1rem .75rem;}
+        .fixed-float .list-links li .u-treasure.shake{animation: shake 2s infinite ease;-webkit-animation: shake 2s infinite ease;}
+        .fixed-float .list-links li .u-treasure-shadow{position: absolute;top: 0;left: 50%;margin-left: -0.5rem;background: url(//ossweb-img.qq.com/images/lpl/m/web201704/pic_shadow_treasure.png) no-repeat;background-size:1rem .75rem;}
+        .fixed-float .list-links li .u-book{position: relative;background: url(//ossweb-img.qq.com/images/lpl/m/web201704/pic_book.png) no-repeat;background-size:1rem .75rem;}
+        .fixed-float .list-links li .u-book:after{content: "";display: block;width: 1rem;height: 0.75rem;position: absolute;top: 0;left: 0;background: url(//ossweb-img.qq.com/images/lpl/m/web201704/pic_shadow_book.png) no-repeat;background-size:1rem .75rem;}
+        @keyframes shake{0%{transform: rotate(0deg);}
+            25%{transform: rotate(-15deg);}
+            50%{transform: rotate(0deg);}
+            75%{transform: rotate(15deg);}
+            100%{transform: rotate(0deg);}}
+        @-webkit-keyframes shake{0%{transform: rotate(0deg);}
+            25%{transform: rotate(-15deg);}
+            50%{transform: rotate(0deg);}
+            75%{transform: rotate(15deg);}
+            100%{transform: rotate(0deg);}}
+        .cp-dia{width: 6.38rem;height: auto;border: 1px solid #353535;background-color: rgba(29, 29, 29, 0.71);}
+        .cp-dia .u-default-box{position: relative;padding-bottom: 0.3rem;}
+        .cp-dia .u-default-box h3{font-size: 0.4rem;color: #cbcbcb;text-align: center;padding-top: 0.58rem;padding-bottom: 0.1rem;}
+        .cp-dia .u-default-box.u-skin-box{padding-top: 0.62rem;text-align: center;}
+        .cp-dia .u-default-box.u-skin-box img{text-align: center;width: 2.77rem;height: 2.35rem;border: 1px solid #353535;}
+        .cp-dia .u-default-box.u-skin-box p{color: #ccc;font-size: 0.24rem;line-height: 0.56rem;}
+        .cp-dia .img-box{text-align: center;}
+        .cp-dia .fd-box img{width:2.85rem;height:2.75rem;}
+        .cp-dia .ui-btn-default{display: block;margin: 0.1rem auto;width: 2.9rem;height: 0.8rem;line-height: 0.8rem;background-color: #684e16;text-align: center;border-radius: 0.04rem;color: #cea04a;font-size: 0.3rem;}
+        .cp-dia .ui-btn-default.ui-btn-md{width: 3.28rem;height: 0.7rem;line-height: 0.7rem;margin: 0.34rem auto 0.48rem auto;}
+        .cp-dia .ui-btn-default.ui-btn-sm{display: inline-block;width: 1.2rem;height: 0.54rem;line-height: 0.54rem;}
+        .cp-dia .dia-close{width: 0.6rem;height: 0.6rem;line-height: 0.6rem;position: absolute;font-size: 0.3rem;color: #fff;text-align: center;}
+        .cp-dia .dia-close.dia-close-2{right: 0;top: 0;background-color: rgba(32, 33, 35, 0.91);}
+        .cp-dia .dia-close.dia-close-1{top: -0.5rem;right: -0.5rem;}
+        .cp-dia .dialog-tab .hd{height: 0.83rem;background-color: #2a2b2d;}
+        .cp-dia .dialog-tab .hd ul{display: flex;flex-flow: row;}
+        .cp-dia .dialog-tab .hd ul li{position: relative;flex: 1;}
+        .cp-dia .dialog-tab .hd ul li a{display: block;width: 100%;height: 0.8rem;line-height: 0.8rem;font-size: 0.24rem;color: #848484;text-align: center;}
+        .cp-dia .dialog-tab .hd ul li.on a{color: #cea04a;}
+        .cp-dia .dialog-tab .hd ul li.on:after{content: "";position: absolute;width: 1.7rem;height: 0.05rem;background-color: #cea04a;left: 50%;margin-left: -0.85rem;}
+        .cp-dia .dialog-tab .bd .tab-panel{padding-top: 0.38rem;color: #ccc;font-size: 0.2rem;line-height: 0.36rem;}
+        .cp-dia .dialog-tab .bd .tab-panel p i{font-size: 0.24rem;font-style: normal;font-weight: bold;}
+        .cp-dia .dialog-tab .bd .tab-panel p a{text-decoration: underline;color: #cea04a;}
+        .cp-dia .dialog-tab .bd .tab-panel p a.ui-btn-sm{text-decoration: none;}
+        .cp-dia .dialog-tab .bd .tab-panel p.warm-tips{width: 5.8rem;margin: 0 auto 0.28rem auto;}
+        .cp-dia .dialog-tab .bd .tab-panel .my-reward{width: 6.1rem;margin: 0 auto;}
+        .cp-dia .dialog-tab .bd .tab-panel .my-reward ul{width: 100%;}
+        .cp-dia .dialog-tab .bd .tab-panel .my-reward ul li{height: 0.8rem;line-height: 0.8rem;border: 1px solid #0c0f14;border-bottom-color: #353535;border-left: none;border-right: none;vertical-align: middle;}
+        .cp-dia .dialog-tab .bd .tab-panel .my-reward ul li > div{display: inline-block;}
+        .cp-dia .dialog-tab .bd .tab-panel .my-reward ul li > div:first-child{width: 1.56rem;text-align: right;}
+        .cp-dia .dialog-tab .bd .tab-panel .my-reward ul li > div + div > p{padding-left: 0.92rem;}
+        .cp-dia .dialog-tab .bd .tab-panel .my-reward ul li:first-child{border-top-color: transparent;}
+        .cp-dia .dialog-tab .bd .tab-panel .my-reward ul li .exchange-code{width: 1.78rem;color: #ccc;background-color: transparent;border: none;outline: none;font-size: 0.2rem;}
+        .cp-dia .dialog-tab .bd .tab-panel > p{width: 5.8rem;margin: 0 auto;}
+        .cp-dia .dialog-tab .bd .tab-panel .content-item{width: 6rem;margin: 0 auto;}
+        .cp-dia .dialog-tab .bd .tab-panel .content-item.ac-prizes{padding: 0.22rem 0;}
+        .cp-dia .dialog-tab .bd .tab-panel .content-item.ac-prizes h3{position: relative;padding-left: 0.18rem;font-size: 0.24rem;font-weight: bold;margin-bottom: 0.08rem;}
+        .cp-dia .dialog-tab .bd .tab-panel .content-item.ac-prizes h3:after{content: "";position: absolute;left: 0;width: 0.08rem;height: 0.28rem;top: 50%;margin-top: -0.14rem;background-color: #00a483;border-radius: 0.02rem;}
+        .cp-dia .dialog-tab .bd .tab-panel .content-item .prize-in-activity li{float: left;width: 1.73rem;height: 1.64rem;border: 1px solid #353535;text-align: center;margin: 0.1rem 0.11rem;}
+        .cp-dia .dialog-tab .bd .tab-panel .content-item .prize-in-activity li:nth-of-type(3n){margin-right:0;}
+        .cp-dia .dialog-tab .bd .tab-panel .content-item .prize-in-activity li img{width: 1.74rem;height: 1.2rem;}
+        .cp-dia .dialog-tab .bd .tab-panel .content-item .prize-in-activity li p{height: 0.44rem;line-height: 0.44rem;text-align: center;background-color: #2e2f2f;font-size: 0.18rem;}
+        .cp-dia .dialog-tab .bd .ac-rule-txt >i, .cp-dia .dialog-tab .bd .ac-rule-txt >span{display: block;width: 100%;box-sizing:border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;}
+        .cp-dia .dialog-tab .bd .ac-rule-txt >span{position:relative;padding-left:.3rem;}
+        .cp-dia .dialog-tab .bd .ac-rule-txt >span >em{position: absolute;left:0;top:0;font-style:normal;}
+        .cp-dia .prize-in-activity-column{display: block;margin: 0.8rem auto;}
+        .cp-dia .prize-in-activity-column li{width: 5.78rem;height: 0.88rem;background-color: #2a2b2d;color: #dbdbdb;font-size: 0.26rem;margin: 0.1rem auto;text-align: center;border: 1px solid #353535;}
+        .cp-dia .prize-in-activity-column li .prize-img-box{display: inline-block;position: relative;width: 2.6rem;height: 0.88rem;vertical-align: middle;text-align: center;}
+        .cp-dia .prize-in-activity-column li .prize-img-box img{position: absolute;left: 50%;margin-left: -0.87rem;top: -0.22rem;width:1.74rem;height:1.2rem;}
+        .cp-dia .prize-in-activity-column li .prize-name{display: inline-block;width: 3rem;height: 0.88rem;line-height: 0.88rem;text-align: left;}
+        .cp-dia .u-statement{width: 100% !important;height: 0.66rem;line-height: 0.66rem;text-align: center;font-size: 0.24rem;color: #4e5055;background-color: rgba(12, 13, 15, 0.91);margin: 0 !important;}
+
+        /*# sourceMappingURL=index.css.map*/
+        /* 按钮变灰加上这个class */
+        .gray { -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -ms-filter: grayscale(100%); -o-filter: grayscale(100%); filter: grayscale(100%); filter: gray; }
+        /*新增弹窗*/
+        .cp-dia.cp-dia-detail .dialog-tab .hd ul li.on:after{width: 1.6rem; margin-left: -0.8rem;}
+        .cp-dia .dialog-tab .bd .tab-panel .content-item .prize-in-activity.column-4 li{
+            width:1.35rem;height:2.37rem;margin: 0.1rem 0.05rem;
+        }
+        .cp-dia .dialog-tab .bd .tab-panel .content-item .prize-in-activity.column-4 li:first-child{
+            margin-left: 0.06rem;;
+        }
+        .cp-dia .dialog-tab .bd .tab-panel .content-item .prize-in-activity.column-4 li:nth-of-type(4n){
+            margin-right:0;
+        }
+        .cp-dia .dialog-tab .bd .tab-panel .content-item .prize-in-activity.column-4 li img{
+            width:1.35rem;height:1.7rem;
+        }
+        .cp-dia .dialog-tab .bd .tab-panel .content-item .prize-in-activity.column-4 li p{height:.67rem;line-height:.34rem;}
+        .sign-tip{color:#ccc;font-size:.2rem;line-height:.34rem;padding:.98rem .3rem .22rem .3rem;border-bottom:1px solid #0d0e10;}
+        .sign-tip i{color:#cea04a;font-style:normal;}
+
+        .info-form{padding:.3rem;color:#ccc;font-size:.2rem;}
+        .info-form .f-title{width:1.12rem;float:left;}
+        .info-form .f-fill{width:4.54rem;float:right;color:#cea04a;}
+
+        .info-form ul li{height:.6rem;line-height:.6rem;margin-bottom:.18rem;}
+        .info-form ul li label{display:block;width:100%;height:100%;}
+        .info-form ul li select,.info-form ul li input{width:100%;height:.58rem;border:1px solid #030000;background-color:#101011;color:#cea04a;}
+        .info-form ul li select{background:url(//ossweb-img.qq.com/images/lpl/m/web201704/select_tag.png) #101011 no-repeat right;-moz-appearance:none;-webkit-appearance:none;appearance:none;background-size:.49rem .58rem;}
+        .info-form ul li input{text-indent:.04rem;}
+
+        .info-form .radio-choice{color:#fff;}
+        .info-form .radio-choice >span{margin-right:.68rem;}
+        .info-form .radio-choice >span em{position:relative;display:inline-block;vertical-align:middle;width:.42rem;height:.42rem;border:1px solid #000;background-color:#111213;border-radius:50%;margin-right:.2rem;}
+        .info-form .radio-choice >span.on em:after{content:"";position:absolute;width:.20rem;height:.20rem;background-color:#cea04a;top:50%;margin-top:-.1rem;left:50%;margin-left:-.1rem;border-radius:50%;}
+
+        .fixed-float .list-links li .u-treasure.u-treasure-gold{background:url(//ossweb-img.qq.com/images/lpl/m/web201704/big_treasure_gold.png) no-repeat center;    background-size: .84rem .66rem;}
+        .fixed-float .list-links li .u-treasure.u-treasure-gold-gray{background:url(//ossweb-img.qq.com/images/lpl/m/web201704/big_treasure_gold_gray.png) no-repeat center;    background-size: .84rem .66rem;}
+        .fixed-float .list-links li .u-treasure.u-treasure-gold-gray-open{width:1.26rem;height:.96rem;background:url(//ossweb-img.qq.com/images/lpl/m/web201704/big_treasure_gold_grayopen.png) no-repeat center;left: 0.35rem; background-size: 1rem .7rem;top: -.1rem;}
+
+        .cp-dia-title{    color: #cea04a;
+            font-size: .3rem;
+            padding: .2rem .1rem;
+            text-align: center;}
+        .cp-dia-info{color:#ccc;}
+        .cp-dia-info .content-item{color: #ccc;
+            font-size: .2rem;
+            line-height: .34rem;
+            padding: .98rem .3rem .22rem .3rem;
+            border-bottom: 1px solid #0d0e10;}
+        .cp-dia-info .content-item i{font-style: normal;}
+        .cp-dia-info .content-item span{color: #cea04a;font-style: normal;}
+        .cp-dia-info form{font-size:.2rem;padding:.2rem .3rem;width:100%;
+            color: #ccc;box-sizing:border-box;-webkit-box-sizing:border-box;}
+        .cp-dia-info form table{width:100%;}
+        .cp-dia-info form table tr{height: .78rem;line-height: .6rem;    margin-bottom: .18rem;}
+        .cp-dia-info form table th{width: 1.4rem;font-style:normal;text-align:left;}
+        .cp-dia-info form table select,.cp-dia-info form table input{width:100%;height:.58rem;border:1px solid #030000;background-color:#101011;color:#cea04a;}
+        .cp-dia-info form table select{background:url(//ossweb-img.qq.com/images/lpl/m/web201704/select_tag.png) #101011 no-repeat right;-moz-appearance:none;-webkit-appearance:none;appearance:none;background-size:.49rem .58rem;}
+        .cp-dia-info form table input{text-indent:.04rem;}
+        .asterisk{color:#cea04a}
+        .label-class{position:relative;padding-left:.66rem;cursor:pointer;height: .6rem;line-height: .6rem;margin-right:.68rem;}
+        .label-class:before{content:'';position:absolute;top:50%;margin-top:-.21rem;left:0;    width: .42rem;
+            height: .42rem;
+            border: 1px solid #000;
+            background-color: #111213;
+            border-radius: 50%;}
+        .label-class.radio-selected:after{content:'';    position: absolute;
+            width: .20rem;
+            height: .20rem;
+            background-color: #cea04a;
+            top: 50%;
+            margin-top: -.1rem;left:.143rem;
+            border-radius: 50%;}
+
+        .radio-class{display:none;}
+
+        .myPrize-all{width:100%;margin: .2rem 0;}
+        .myPrize-all .pageprenone,.myPrize-all .pagenextnone{color:#cea04a;font-size: .24rem;padding:0 .2rem;}
+        .myPrize-all tbody td{height: .5rem;
+            line-height: .5rem;}
+        .myPrize-all tfoot td{    height: .6rem;
+            line-height: .6rem;}
+        #spanBind_361012 span{display:inline-block;}
+        /*调节位置*/
+        .m-login.m-login-1.justifyPosition{bottom:3.3rem!important;}
+        .fixed-float a{outline:none;}
+        .tip-opened:before{background:url(opened.png) no-repeat center;}
+        .tip-lastone:before{background:url(lastone.png) no-repeat center;}
+        .tip-opened:before,.tip-lastone:before{content:"";width:1rem;height:1.32rem;position:absolute;top:0;left:0;background-size:100% 100%;z-index:100;}
+
+    </style>
+</head>
+<body>
+<!--顶部-->
+<!-- <div class="com-top">
+    <a href="javascript:window.history.back();" class="spr-btn_return"></a>
+    直播间
+    <a href="javascript:;" class="spr-btn_share"></a>
+</div> -->
+<!--直播间-->
+<!-- 绑定大区 
+<div class="m-login m-login-1" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);bottom:2.25rem">
+	 <span id="spanNotBind_361012"><a href="javascript:amsInit(110514, 361011);">绑定大区</a></span>
+         <span id="spanBind_361012" style="display:none">
+         <span id="area_info_361012"></span><br/>
+         <span id="role_info_361012" style="display:none;opacity:0"></span>
+         <a href="javascript:amsInit(110514, 361011);">更改绑定</a>
+    </span>
+</div>-->
+<div class="com-wrap page-contest" id="page_liveroom">
+    <div class="liveRoom">
+        <!--直播视频-->
+        <div class="live-video live-video-box">
+            <div class="live-video-innerbox" id="live_video">
+
+            </div>
+            <p class="video-tit"></p>
+        </div>
+        <!--支持率-->
+        <div class="support-section" style="display:none;">
+            <div class="whole-progress bgColor-red clearfix pr">
+                <p class="comm-support blue-part bgColor-blue fl support_line_control">
+                    <span class="s-team-txt">
+                        <i class="s-team-name">EDG</i>
+                        <i class="blue-part-percent" id="supports1Width">25%</i>
+                    </span>
+                    <!--
+                    spr-support          支持
+                    spr-supported        已支持
+                    spr-support_grey     支持置灰
+                    spr-supported_grey   已支持置灰
+                    -->
+                    <a href="javascript:;" id="supprot-a" class="spr-supported"></a>
+                </p>
+                <p class="comm-support red-part pa">
+                    <a href="javascript:;" class="spr-support" id="supprot-b" ></a>
+                    <span class="s-team-txt">
+                        <i class="s-team-name">RNG</i>
+                        <i class="blue-part-percent" id="supports2Width">75%</i>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <!--tab切换-->
+        <!--tab切换-->
+        <div class="tab livesection-tab" id="livesection_tab">
+            <div class="hd">
+                <ul class="clearfix">
+                    <li class="on"><a href="javascript:void(0);">图文播报</a></li>
+                    <li><a href="javascript:void(0);">聊天室</a></li>
+                    <li><a href="javascript:void(0);">竞猜</a></li>
+                </ul>
+            </div>
+            <div class="bd scroll-box">
+                <!--图文播报-->
+                <div class="tab-panel tab-panel-1" id="txtLiveBox">
+
+                </div>
+                <!--聊天室-->
+                <div class="tab-panel tab-panel-2" style="display: none">
+
+                    <!--已发消息-->
+                    <div class="sendedMsgBox">
+                        <div class="pr chatroom-main" id="chatMain" style="overflow-y: scroll;">
+                            <ul class="pa chat-list" id="chatList">
+                                <!--  <li class="chat-item">
+                                     <p>
+                                         <span class="chat-title">
+                                             <span>殇晓雨</span><em>说：</em>
+                                         </span>
+                                         <i class="chat-detail">解说在伪装自己哈哈</i>
+                                     </p>
+                                 </li>
+                                 <li class="chat-item">
+                                     <p>
+                                         <span class="chat-title">
+                                             <span>殇晓雨</span><em>说：</em>
+                                         </span>
+                                         <i class="chat-detail">解说在伪装自己哈哈</i>
+                                     </p>
+                                 </li>
+                                 <li class="chat-item">
+                                     <p>
+                                         <span class="chat-title">
+                                             <span>殇晓雨</span><em>说：</em>
+                                         </span>
+                                         <i class="chat-detail">解说在伪装自己哈哈</i>
+                                     </p>
+                                 </li>
+                                 <li class="chat-item">
+                                     <p>
+                                         <span class="chat-title">
+                                             <span>殇晓雨</span><em>说：</em>
+                                         </span>
+                                         <i class="chat-detail">解说在伪装自己哈哈</i>
+                                     </p>
+                                 </li>
+                                 <li class="chat-item">
+                                     <p>
+                                         <span class="chat-title">
+                                             <span>殇晓雨</span><em>说：</em>
+                                         </span>
+                                         <i class="chat-detail">解说在伪装自己哈哈</i>
+                                     </p>
+                                 </li>
+                                 <li class="chat-item">
+                                     <p>
+                                         <span class="chat-title">
+                                             <span>殇晓雨</span><em>说：</em>
+                                         </span>
+                                         <i class="chat-detail">解说在伪装自己哈哈</i>
+                                     </p>
+                                 </li>
+                                 <li class="chat-item">
+                                     <p>
+                                         <span class="chat-title">
+                                             <span>殇晓雨</span><em>说：</em>
+                                         </span>
+                                         <i class="chat-detail">解说在伪装自己哈哈</i>
+                                     </p>
+                                 </li>
+                                 <li class="chat-item">
+                                     <p>
+                                         <span class="chat-title">
+                                             <span>殇晓雨</span><em>说：</em>
+                                         </span>
+                                         <i class="chat-detail">解说在伪装自己哈哈</i>
+                                     </p>
+                                 </li>
+                                 <li class="chat-item">
+                                     <p>
+                                         <span class="chat-title">
+                                             <span>殇晓雨</span><em>说：</em>
+                                         </span>
+                                         <i class="chat-detail">解说在伪装自己哈哈</i>
+                                     </p>
+                                 </li>
+                                 <li class="chat-item">
+                                     <p>
+                                         <span class="chat-title">
+                                             <span>殇晓雨</span><em>说：</em>
+                                         </span>
+                                         <i class="chat-detail">解说在伪装自己哈哈</i>
+                                     </p>
+                                 </li>
+                                 <li class="chat-item">
+                                     <p>
+                                         <span class="chat-title">
+                                             <span>殇晓雨</span><em>说：</em>
+                                         </span>
+                                         <i class="chat-detail">解说在伪装自己哈哈</i>
+                                     </p>
+                                 </li> -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--发送框-->
+                    <div class="sendMsgBox">
+                        <input type="text" class="msg-content" id="msg_content">
+                        <a href="javascript:;" class="btn-sendMsg" id="msg_send"></a>
+                    </div>
+                </div>
+                <!--竞猜-->
+                <div class="tab-panel tab-panel-3" style="display: none">
+                     <iframe src="https://qs.888.qq.com/m_qq/es/es.lol.mobile.html?channelName=living&containerView=iframe&__channel=mlol#mobile=init" frameborder="0" width="100%" height="100%" allowtransparency="true"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--侧边悬浮-->
+<div class="fixed-float">
+    <ul class="list-links">
+        <!--
+            1、活动开启前 未到领取时间点：盒子样式为 u-treasure
+            2、活动开启后 可领取：        盒子样式为 u-treasure shake
+            3、活动开启后 已领取：        盒子样式为 u-treasure gray
+
+            4、金色盒子：盒子样式为 u-treasure u-treasure-gold
+            5、金色盒子变灰：盒子样式为 u-treasure u-treasure-gold-gray
+            6、金色盒子打开变灰：盒子样式为 u-treasure u-treasure-gold-gray-open
+            
+            class="tip-opened"  已开启
+            class="tip-lastone"  最后一个
+        -->
+        <li id="one_minute_prize" style="display:block;height:1.58rem;">
+            <span class="counttime" style="display:;z-index: 100;position: absolute;width: 100%;text-align: center;left: 0;top:0.74rem;font-weight:bold;font-size:.22rem;color:rgb(226, 226, 225);" id="time_down"><!--00:58--></span>
+            <a id="one_minute_prize_btn"  href="javascript:;">
+                <!--类名加gray灰化-->
+                <span class="comm-size u-treasure"  id="one_minute_prize_class"></span>
+                <span class="comm-size u-treasure-shadow" ></span>
+                <p style="margin-top: 1.1rem;line-height:.2rem">观赛一分钟<br>开启</p>
+                <p></p>
+            </a>
+        </li>
+        <li id="time_prize" style="display:block;">
+            <a id="time_prize_btn" href="javascript:;">
+                <!--类名加gray灰化-->
+                <span class="comm-size u-treasure" id="time_prize_class"></span>
+                <span class="comm-size u-treasure-shadow"></span>
+                <h4 id="time_prize_desc"></h4>
+                <p id="time_prize_desc_2"></p>
+            </a>
+        </li>
+        <li style="height: 1.12rem;">
+            <a href="javascript:TGDialogS('ceshi03');">
+                <span class="comm-size u-book"></span>
+                <p>活动规则</p>
+            </a>
+        </li>
+    </ul>
+</div>
+<script type="text/javascript" src="http://ossweb-img.qq.com/images/js/mobile_build/util/zepto.js"  ></script>
+<script src="//ossweb-img.qq.com/images/js/mobile_build/milo.js"></script>
+<script src="//pub.idqqimg.com/qqmobile/qqapi.js?_bid=152"></script>
+<script src="//imgcache.gtimg.cn/tencentvideo_v1/tvp/js/tvp.player_v2.js" charset="utf-8"></script>
+<script src="http://lpl.qq.com/web201612/data/LOL_MATCH2_GAME_LIST_BRIEF.js"></script>
+<script src="http://lpl.qq.com/web201612/data/LOL_MATCH2_LIVE_BMATCH_LIST.js"></script>
+<script src="http://lpl.qq.com/web201612/data/LOL_MATCH2_TEAM_LIST.js"></script>
+<script src="http://gpcd.gtimg.cn/qt/1h/comp/qtp.live_room_h5.min.js"></script>
+<script src="http://lpl.qq.com/web201612/data/LOL_NEWMATCH_MOBILE_SHARE_CONFIG_INFO.js"></script>
+<script src="//lol.qq.com/m/public/LOL_App.js"></script>
+<script src="js/login.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/comm.js"></script>
+<script src="js/share.js"></script>
+<script src="js/public.js"></script>
+<script src="js/guess.js"></script>
+<script src="js/live.js"></script>
+
+<script>
+    /*tab切换*/
+    cimi.tabSwitch('livesection_tab');
+    /*弹窗tab切换*/
+    cimi.tabSwitch('dialog_tab_detail');
+    //复制到剪贴板组件
+    //new Clipboard('#copy_code');
+    /*直播初始化*/
+    //liveVideo('18091377','live_video',false);
+    //二级页面导航置灰
+    $('#comm_nav li').removeClass('on');
+
+
+    var $msgSend = $('#msg_send'),           //发送按钮
+            $msgContent = $('#msg_content'),     //发送内容
+            $contentBox = $('#chatList'),        //聊天消息盒子
+            $targetBox = $('#page_liveroom'),    //直播室
+            $tabBox = $('#livesection_tab'),     //切换盒子
+            $nav = $('#comm_nav');               //导航
+
+
+    /*聊天室高度自适应高度*/
+    $(window).on('load resize',function(){
+        //获取各元素高度
+        var $windowHeight = $(window).height(),
+                $topHeight = $('.com-top').height(),
+                $sectionOneHeight = $targetBox.find('.live-video').height(),
+                $sectionTwoHeight = $targetBox.find('.support-section').height(),
+                $sectionThreeHeight = $tabBox.find('.hd').height(),
+                $navHeight = $nav.height();
+        var $resizeHeight = $windowHeight - $topHeight - $sectionOneHeight - $sectionTwoHeight -$sectionThreeHeight -$navHeight;
+        //聊天室高度自适应
+        $tabBox.find('.bd .tab-panel.tab-panel-2').height($resizeHeight);
+        $tabBox.find('.bd .tab-panel.tab-panel-1').height($resizeHeight);
+        $tabBox.find('.bd .tab-panel.tab-panel-3').height($resizeHeight);
+    });
+
+    //点击聊天室
+    $('#livesection_tab').find('.hd li').click(function(){
+        var $targetIndex= $(this).index();
+        if($targetIndex == 1){
+            //登陆栏上移
+            $('.m-login').addClass('justifyPosition');
+            //聊天内容滚到底部
+            scrollBottom('chatMain');
+        }else{
+            $('.m-login').removeClass('justifyPosition');
+        }
+    });
+
+    /*发送信息*/
+    var sendMsg ={
+        name: '',
+        time: '',
+        content: '',
+        send: function(){
+            var content = '<li class="chat-item">\
+                    <p>\
+                    <span class="chat-title">\
+                    <span>'+sendMsg.name+'</span><em>说：</em>\
+            </span>\
+            <i class="chat-detail">'+sendMsg.content+'</i>\
+            </p>\
+            </li>';
+            $contentBox.append(content);
+        }
+    };
+    $msgSend.click(function(){
+        var $content = $msgContent.val();
+        if($content.trim() == ''){
+            alert('输入框为空，请重新输入!');
+        }else{
+            sendMsg.content = $content;                        //获取输入框内容
+            sendMsg.name = $('#login_nickname_span').text();   //获取用户名字
+            sendMsg.send();                                    //发送信息
+            //聊天内容滚到底部
+            scrollBottom('chatMain');
+        }
+        //清空输入框
+        $msgContent.val('');
+    });
+    //按enter键同发送效果
+    document.onkeydown=function(event){
+        var e = event || window.event || arguments.callee.caller.arguments[0];
+        if(e && e.keyCode==13){ // enter 键
+            $msgSend.click();
+        }
+    };
+
+    function scrollBottom(id){
+        var $box = $('#'+id);
+        var $scrollHeight = $box.find('ul')[0].scrollHeight;
+        console.log($scrollHeight);
+        $box.scrollTop($scrollHeight);
+    }
+
+    milo.ready(function(){
+        LIVE.Init();
+    })
+</script>
+
+
+<script src="http://lpl.qq.com/web201612/js/framebus_milo.js"></script> 
+<script src="http://static.gtimg.com/js/inject/es.lol.js"></script> 
+<script src="//pingjs.qq.com/ping_tcss_ied.js"></script>
+<script>if(typeof(pgvMain) == 'function')pgvMain({virtualDomain: "lol.qq.com"});</script>
+</body>
+</html><!--[if !IE]>|xGv00|dc229d44dcf34a5fba91f3f91c30643f<![endif]-->
